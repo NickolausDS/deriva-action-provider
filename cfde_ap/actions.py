@@ -31,6 +31,7 @@ def deriva_ingest(servername, archive_url, deriva_webauthn_user,
     }
     registry = Registry('https', servername, credentials=credential)
     server = DerivaServer('https', servername, credential)
+    print('CURRENTLY RUNNING IN SEPARATE PROCESS!!!!')
 
     https_token = get_dependent_token(f'https://auth.globus.org/scopes/{globus_ep}/https')
     # the Globus action_id is used as the Submission id, this allows us to track submissions
